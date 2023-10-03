@@ -14,15 +14,15 @@
                 align-items: center;
                 height: 100vh;
                 margin: 0;
-                background-image: linear-gradient(to left top, #52d100, #489d17, #3a6c1c, #293f1a, #151614);
+                background-image: linear-gradient(to right top, #002f76, #005ea5, #008ec4, #00bdd4, #12ebd8);
             }
 
             form {
-                width: fit-content;
-                height: 30vh;
-                padding: 20px; /* Espacio alrededor del formulario */
+                width=fit-content;
+                height: fit-content;
+                padding: 70px; /* Espacio alrededor del formulario */
                 border-radius: 10px;
-                background-color: rgba(83, 83, 83, 0.2);
+                background-color: rgba(255, 255, 255, 0.07);
             }
         </style>
     </head>
@@ -30,10 +30,12 @@
         <div class="borde">
             <form action="validacion.php" method="get">
                 <label for=""><strong>Usuario o email</strong><br></label>
-                <input type="text" id="name"><br>
+                <input type="text" id="name" placeholder="Introduce tu nombre"><br><br>
                 <label for=""><strong>Contraseña</strong><br></label>
-                <input type="password" id="pass"><br><br>
-                <input type="submit">Acceder</button>
+                <input type="password" id="pass" placeholder="Introduce tu contraseña"><br><br>
+                <input type="checkbox" id="rmb" name="remember" value="Recordar">
+                <label for=""><strong>Recordar informacion de inicio</strong></label><br><br>
+                <input type="submit" value="Iniciar sesión"></button>
             </form>
         </div>
     </body>
