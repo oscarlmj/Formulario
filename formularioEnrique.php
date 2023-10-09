@@ -2,69 +2,70 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+        <meta charset= "UTF-8">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
 
-        h3 {
-            color: #333;
-        }
+            h3 {
+                color: #333;
+            }
 
-        form {
-            background-color: #fff;
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-        }
+            form {
+                background-color: #fff;
+                max-width: 400px;
+                margin: 0 auto;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            }
 
-        fieldset {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-        }
+            fieldset {
+                border: 1px solid #ddd;
+                padding: 10px;
+                margin-bottom: 15px;
+                border-radius: 5px;
+            }
 
-        legend {
-            font-weight: bold;
-        }
+            legend {
+                font-weight: bold;
+            }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
+            label {
+                display: block;
+                margin-bottom: 5px;
+            }
 
-        input[type="text"],
-        select {
-            width: 90%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+            input[type="text"],
+            select {
+                width: 90%;
+                padding: 8px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
 
-        /* Estilos para alinear los checkboxes junto a los labels */
-        label.checkbox-label {
-            display: inline-block;
-            margin-right: 10px;
-        }
+            /* Estilos para alinear los checkboxes junto a los labels */
+            label.checkbox-label {
+                display: inline-block;
+                margin-right: 10px;
+            }
 
-        input[type="checkbox"] {
-            vertical-align: middle;
-        }
+            input[type="checkbox"] {
+                vertical-align: middle;
+            }
 
-        em {
-            font-style: italic;
-        }
-    </style>
+            em {
+                font-style: italic;
+            }
+        </style>
     </head>
 
     <body>
