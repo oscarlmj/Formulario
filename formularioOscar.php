@@ -62,25 +62,25 @@
         <div class="borde">
             <form action="funciones_validacion.php" method="get">
                 <label for="name" id="center"><strong>Nombre Completo</strong><br></label>
-                <input type="text" id="name" placeholder="Introduce tu nombre"><br><br>
-                <label for="dir" id="center"><strong>Direccion</strong></label><br>
-                <input type="text" id="dir" placeholder="Introduce la direccion"><br><br>
+                <input type="text" id="nombre" placeholder="Introduce tu nombre"><br><br>
+                <label for="direccion" id="center"><strong>Direccion</strong></label>
+                <input type="text" id="direccion" placeholder="Introduce la direccion"><br>
                 <label for="via"><strong>Tipo de via</strong></label>
                 <select name="via" id="tipo" multiple>
-                    <option value="calle">Calle</option>
+                    <option value="calle" selected>Calle</option>
                     <option value="bloque">Bloque</option>
                 </select><br>
-                <label for="number" id="center"><strong>Numero de telefono</strong><br></label>
-                <input type="text" id="number" placeholder="Introduce un teléfono"><br><br>
+                <label for="telefono" id="center"><strong>Numero de telefono</strong><br></label>
+                <input type="text" id="telefono" placeholder="Introduce un teléfono"><br><br>
                 <label for="hora"><strong>Hora de entrega</strong></label><br>
                 <select id="hora">
                     <option value="9">09:00</option>
                     <option value="12">12:00</option>
-                    <option value="16">16:00</option>
+                    <option value="16" selected>16:00</option>
                     <option value="19">19:00</option>
                 </select><br>
-                <input type="checkbox" id="rmb" name="remember" value="Recordar">
-                <label for=""><strong>Recordar informacion de envio</strong></label><br><br>
+                <input type="checkbox" id="rmb" name="remember" value="recordar">
+                <label for="rmb"><strong>Recordar informacion de envio</strong></label><br><br>
                 <input type="submit" value="Confirmar"></button>
             </form>
         </div>
