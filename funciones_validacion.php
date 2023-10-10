@@ -5,22 +5,22 @@
  */
 function valida_direccion($direccion)
 {
-    if(($direccion>0)||(!$direccion.is_numeric))
+    if(!is_numeric($direccion) && strlen($direccion)>10)
     {
-        if(strlen($direccion)>5 && strlen($direccion)<50)
         return true;
-            else
-                return false;
     }
     else
         return false;
 }
+
 /**
  * Validamos el número de teléfono
  */
 function valida_tlf($telefono){
-    if(strlen($telefono)<0||strlen($telefono)>6)
+    if(strlen($telefono)!=9)
+    {
         return false;
+    }
     else
         return true;
 }
@@ -30,7 +30,12 @@ function valida_tlf($telefono){
  */
 
  function valida_nombre($nombre){
-    
+    if(strlen($nombre)<2 || strlen($nombre)>50)
+    {
+        return false;
+    }
+    else
+        return true;
 
  }
 
