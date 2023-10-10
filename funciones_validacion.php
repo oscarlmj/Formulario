@@ -1,6 +1,8 @@
 <?php
 
-
+/**
+ * Validamos la dirección
+ */
 function valida_direccion($direccion)
 {
     if(($direccion>0)||(!$direccion.is_numeric))
@@ -13,7 +15,9 @@ function valida_direccion($direccion)
     else
         return false;
 }
-
+/**
+ * Validamos el número de teléfono
+ */
 function valida_tlf($telefono){
     if(strlen($telefono)<0||strlen($telefono)>6)
         return false;
