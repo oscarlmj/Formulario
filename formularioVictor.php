@@ -7,7 +7,7 @@
         <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Formulario</title>
+                <title>Formulario de Victor</title>
                 <style>
                         body{
                                 background: radial-gradient(#9ed1b7, #09738a, #092b5a);
