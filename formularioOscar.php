@@ -49,8 +49,10 @@ switch($array_defecto["tipo_via"]){
 <div>
     <form action="recibe_datos.php" method="post">
         <input type="hidden" name="nombre_formulario" value="Oscar">
+
         <label for="nombre" id="center"><strong>Nombre Completo</strong></label>
         <input type="text" name="nombre" id="nombre"  placeholder="Introduce tu nombre">
+
         <label for="via"><strong>Tipo de via</strong></label>
         <select name="tipo de via" id="tipo">
             <option value="calle" <?=$selected_calle?>>Calle</option>
@@ -58,9 +60,10 @@ switch($array_defecto["tipo_via"]){
             <option value="avenida" <?=$selected_avenida?>>Avenida</option>
         </select>
         <br><br>
+        
         <label for="direccion" id="center"><strong>Direccion</strong></label>
         <input type="text" id="direccion" name="direccion" placeholder="Introduce la direccion">
-        
+
         <label for="telefono" id="center"><strong>Numero de telefono</strong></label>
         <input type="text" id="telefono" name="telefono" placeholder="Introduce un teléfono">
 
