@@ -9,72 +9,92 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Formulario de Victor</title>
                 <style>
-                        body{
-                                background: radial-gradient(#9ed1b7, #09738a, #092b5a);
+                       body {
+                        background: radial-gradient(#9ed1b7, #09738a, #092b5a);
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
                         }
-                        #containerForm{
-                                width: 100vw;
-                                display:flex;
-                                justify-content: center;
-                                vertical-align:middle;
-                                margin-top:40vh;
-                                
+
+                        #containerForm {
+                        width: 100%;
+                        max-width: 500px;
                         }
-                        form{
-                                width:15vw;
-                                background: rgba(255, 255, 255, 0.2);
-                                border-radius: 16px;
-                                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-                                backdrop-filter: blur(5px);
-                                -webkit-backdrop-filter: blur(5px);
-                                border: 1px solid rgba(255, 255, 255, 0.3);
-                                padding:50px;
+
+                        form {
+                        width: 100%;
+                        max-width: 400px;
+                        background: rgba(255, 255, 255, 0.2);
+                        border-radius: 16px;
+                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                        backdrop-filter: blur(5px);
+                        -webkit-backdrop-filter: blur(5px);
+                        border: 1px solid rgba(255, 255, 255, 0.3);
+                        padding: 50px;
+                        margin: 0 auto;
                         }
-                        .slider{
-                                width: 8vw;
-                                height: 10px;
-                                padding:10px 20px;
-                                padding-left: 40px;
-                                background: #fcfcfc;
+
+                        .slider {
+                        width: 100%;
+                        max-width: 300px;
+                        height: 10px;
+                        padding: 10px 20px;
+                        padding-left: 40px;
+                        background: #fcfcfc;
+                        border-radius: 20px;
+                        display: flex;
+                        align-items: center;
+                        box-shadow: 0px 15px 40px #7E6D5766;
+                        margin-top: 20px;
+                        }
+
+                        .slider p {
+                        font-size: 18px;
+                        font-weight: 600;
+                        font-family: Open Sans;
+                        padding-left: 60px;
+                        color: black;
+                        width: fit-content;
+                        }
+
+                        .slider input[type="range"] {
+                        -webkit-appearance: none !important;
+                        width: 100%;
+                        max-width: 200px;
+                        height: 2px;
+                        background: black;
+                        border: none;
+                        outline: none;
+                        }
+
+                        .slider input[type="range"]::-webkit-slider-thumb {
+                        -webkit-appearance: none !important;
+                        width: 10px;
+                        height: 10px;
+                        background: black;
+                        border: 2px solid black;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        }
+
+                        .slider input[type="range"]::-webkit-slider-thumb:hover {
+                        background: black;
+                        }
+
+                        .separacion {
+                        margin-bottom: 20px;
+                        }
+
+                        label {
+                        font-size: 18px;
+                        }
+                        input[type="submit"]{
                                 border-radius: 20px;
+                                margin: 20px auto 20px;
                                 display: flex;
+                                justify-content: center;
                                 align-items: center;
-                                box-shadow: 0px 15px 40px #7E6D5766;
-                                margin-top:20px;
-                        }
-                        .slider p{
-                                font-size: 18px;
-                                font-weight: 600;
-                                font-family: Open Sans;
-                                padding-left: 60px;
-                                color: black;
-                                width:fit-content;
-                        }
-                        .slider input[type="range"]{
-                                -webkit-appearance:none !important;
-                                width: 120px;
-                                height: 2px;
-                                background: black;
-                                border: none;
-                                outline: none;
-                        }
-                        .slider input[type="range"]::-webkit-slider-thumb{
-                                -webkit-appearance: none !important;
-                                width: 10px;
-                                height:10px;
-                                background: black;
-                                border: 2px solid black;
-                                border-radius: 50%;
-                                cursor: pointer;
-                        }
-                        .slider input[type="range"]::-webkit-slider-thumb:hover{
-                                background: black;
-                        } 
-                        .separacion{
-                                margin-bottom:20px;
-                        }
-                        label{
-                                font-size:18px;
+                                padding: 5px 20px;
                         }
                 </style>
                 <script>
@@ -120,7 +140,8 @@
                                 <label for="consentimiento">Está de acuerdo con las políticas y privacidad de la empresa</label><br>
 
                                 <label for="color">Color del coche</label>
-                                <input type="color" id="color" name="color">
+                                <input type="color" id="color" name="color"><br>
+                                <input type="submit" value="Confirmar">
                         </form> 
                 </div>
         </body>
