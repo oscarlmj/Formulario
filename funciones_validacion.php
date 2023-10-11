@@ -40,8 +40,12 @@ function valida_tlf($telefono){
   * valido las especies del formulario Enrique.
   */
 
-  function valida_especie(){
-    
+    function valida_checkbox($array){
+    if (isset($array)) {
+        return true;
+    } else {
+        return false;
+    }
   }
 /**
  * Valida la fecha para comprobar que el 
