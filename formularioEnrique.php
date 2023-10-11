@@ -34,21 +34,13 @@
         <form action="recibe_datos.php" method="post">
             <fieldset>
                 <legend> <strong>Nombre</strong> </legend>
-<<<<<<< HEAD
                 <label> Introduzca el nombre de su mascota: </label> <input value="<?php echo $array_valores_defecto["nombre_text"] ?>" type="text" id="nombre">
-=======
-                <label> Introduzca el nombre de su mascota: </label> <input value=<?php $array_valores_defecto["nombre_text"] ?> type="text" id="nombre"> <!--El valor por defecto es Nombre-->
->>>>>>> 1e8121ef77c5a2f3d8b85ca3f738199fcc6b10bf
             </fieldset>
             <fieldset>
                 <legend> <strong>Especie</strong> </legend>
                     <label>Introduce la especie de tu mascota: </label>     
                     <select name="tipo">
-<<<<<<< HEAD
                         <option value="Gato"      <?= $selected_gato?>            >Gato</option> 
-=======
-                        <option value="Gato"      <?= $selected_gato?>            >Gato</option> <!--El valor por defecto deberia de ser gato-->
->>>>>>> 1e8121ef77c5a2f3d8b85ca3f738199fcc6b10bf
                         <option value="Perro"      <?= $selected_perro?>          >Perro</option>
                         <option value="Hamster"    <?= $selected_hamster?>        >Hamster</option>
                     </select>
