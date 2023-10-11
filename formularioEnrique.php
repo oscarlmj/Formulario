@@ -1,10 +1,11 @@
 
 <?php
     // Valor que deberá estar seleccionado
-    $array_valores_defecto = array ("especie_seleccionada" => "Perro", "nombre_text" => "Kira", );
+    $array_valores_defecto = array ("especie_seleccionada" => "Perro", "nombre_text" => "Kira", "caracteristica_seleccionada"=> "Perezoso",);
 
     // Inicializamos las variables a ""
     $selected_gato = $selected_perro = $selected_hamster = "";
+    $checked_amable = $checked_perezoso = $checked_energetico ="";
 
     // En función del valor por defecto, seleccionamos una u otra opción
     switch ($array_valores_defecto["especie_seleccionada"]) {
@@ -16,6 +17,18 @@
             break;
         case "Hamster":
             $selected_hamster = "selected";
+            break;
+    }
+
+    switch ($array_valores_defecto["caracteristica_seleccionada"]){
+        case "Amable":
+            $checked_amable = "checked";
+            break;
+        case "Perezoso":
+            $checked_perezoso = "checked";
+            break;
+        case "Energetico":
+            $checked_energetico = "checked";
             break;
     }
 
@@ -49,9 +62,9 @@
                 <legend> <strong>Caracteristicas</strong> </legend>
                 <label >Destaca las caracteristicas de tu mascota: </label> 
                 <br>
-                <label for="Amable"> <em> Amable </em> </label> <input checked="yes" id="Amable" type="checkbox" name="caracteristicas">
-                <label for="Perezoso"> <em>Perezoso </em> </label> <input id="Perezoso" type="checkbox" name="caracteristicas">
-                <label for="Energetico"> <em> Energetico </em> </label> <input id="Energetico" type="checkbox" name="caracteristicas">
+                <label for="Amable"> <em> Amable </em> </label> <input <?= $checked_amable?> id="Amable" type="checkbox" name="caracteristicas">
+                <label for="Perezoso"> <em>Perezoso </em> </label> <input <?= $checked_perezoso?> id="Perezoso" type="checkbox" name="caracteristicas">
+                <label for="Energetico"> <em> Energetico </em> </label> <input  <?= $checked_energetico?> id="Energetico" type="checkbox" name="caracteristicas">
             </fieldset>
         </form>
     </body>
