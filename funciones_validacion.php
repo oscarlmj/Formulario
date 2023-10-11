@@ -45,10 +45,16 @@ function valida_tlf($telefono){
     
   }
 
-
-
-
-
+  function valida_consentimiento($consentimiento){
+    if(isset($consentimiento) && $consentimiento == 1){
+        // El checkbox esta marcado
+        return true;
+    }else{
+        // El checkbox no está marcado, por lo que se muestra un error
+        echo "Debes aceptar la política de privacidad para enviar el formulario.";
+        return false;
+    }
+    }
 
 
 ?>

@@ -7,7 +7,7 @@ $array_defecto= array("hora_entrega"=> "19:00", "tipo_via"=> "avenida");
 $selected_9 = $selected_12 = $selected_16 = $selected_19 ="";
 $selected_calle = $selected_urbanizacion = $selected_avenida="";
 
-//Haciendo uso de un switch se comprueba que opcion está por defecto y se modifica el contenido
+//Haciendo uso de un switch se comprueba qué opcion está por defecto y se modifica el contenido
 //de su variable para modificar el html.
 switch($array_defecto["hora_entrega"]){
     case "9:00":
