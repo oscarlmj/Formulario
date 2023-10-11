@@ -62,9 +62,9 @@
                 <legend> <strong>Caracteristicas</strong> </legend>
                 <label >Destaca las caracteristicas de tu mascota: </label> 
                 <br>
-                <label for="Amable"> <em> Amable </em> </label> <input <?= $checked_amable?> id="Amable" type="checkbox" name="caracteristicas">
-                <label for="Perezoso"> <em>Perezoso </em> </label> <input <?= $checked_perezoso?> id="Perezoso" type="checkbox" name="caracteristicas">
-                <label for="Energetico"> <em> Energetico </em> </label> <input  <?= $checked_energetico?> id="Energetico" type="checkbox" name="caracteristicas">
+                <label for="Amable"> <em> Amable </em> </label> <input <?= $checked_amable?> id="Amable" type="checkbox" value="Amable" name="caracteristicas">
+                <label for="Perezoso"> <em>Perezoso </em> </label> <input <?= $checked_perezoso?> id="Perezoso" type="checkbox" value="Perezoso" name="caracteristicas">
+                <label for="Energetico"> <em> Energetico </em> </label> <input  <?= $checked_energetico?> id="Energetico" type="checkbox" value="Energetico" name="caracteristicas">
             </fieldset>
         </form>
     </body>
