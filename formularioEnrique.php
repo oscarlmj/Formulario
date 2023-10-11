@@ -1,73 +1,32 @@
-<?php
 
-    $valoresPorDefecto = array();
+<?php
+    // Valor que deberá estar seleccionado
+    $array_valores_defecto = array ("especie_seleccionada" => "Perro", "nombre_text" => "Kira", );
+
+    // Inicializamos las variables a ""
+    $selected_gato = $selected_perro = $selected_hamster = "";
+
+    // En función del valor por defecto, seleccionamos una u otra opción
+    switch ($array_valores_defecto["especie_seleccionada"]) {
+        case "Gato":
+            $selected_gato = "selected";
+            break;
+        case "Perro":
+            $selected_perro = "selected";
+            break;
+        case "Hamster":
+            $selected_hamster = "selected";
+            break;
+    }
+
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lan="en">
     <head>
-        <meta charset= "UTF-8">
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                text-align: center;
-                background-color: #f4f4f4;
-                margin: 0;
-                padding: 0;
-            }
-
-            h3 {
-                color: #333;
-            }
-
-            form {
-                background-color: #fff;
-                max-width: 400px;
-                margin: 0 auto;
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            }
-
-            fieldset {
-                border: 1px solid #ddd;
-                padding: 10px;
-                margin-bottom: 15px;
-                border-radius: 5px;
-            }
-
-            legend {
-                font-weight: bold;
-            }
-
-            label {
-                display: block;
-                margin-bottom: 5px;
-            }
-
-            input[type="text"],
-            select {
-                width: 90%;
-                padding: 8px;
-                margin-bottom: 10px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-            }
-
-            /* Estilos para alinear los checkboxes junto a los labels */
-            label.checkbox-label {
-                display: inline-block;
-                margin-right: 10px;
-            }
-
-            input[type="checkbox"] {
-                vertical-align: middle;
-            }
-
-            em {
-                font-style: italic;
-            }
-        </style>
+        <meta charset="UTF-8">
+        <title> Formulario Enrique </title>
+        <link rel="stylesheet" href="./CSS/formularioEnriqueEstilo.css">
     </head>
 
     <body>
@@ -75,15 +34,15 @@
         <form action="recibe_datos.php" method="post">
             <fieldset>
                 <legend> <strong>Nombre</strong> </legend>
-                <label> Introduzca el nombre de su mascota: </label> <input value="Nombre" type="text" id="nombre" > <!--El valor por defecto es Nombre-->
+                <label> Introduzca el nombre de su mascota: </label> <input value=<?php $array_valores_defecto["nombre_text"] ?> type="text" id="nombre"> <!--El valor por defecto es Nombre-->
             </fieldset>
             <fieldset>
                 <legend> <strong>Especie</strong> </legend>
                     <label>Introduce la especie de tu mascota: </label>     
                     <select name="tipo">
-                        <option selected="true">Gato</option> <!--El valor por defecto deberia de ser gato-->
-                        <option >Perro</option>
-                        <option>Hamster</option>
+                        <option value="Gato"      <?= $selected_gato?>            >Gato</option> <!--El valor por defecto deberia de ser gato-->
+                        <option value="Perro"      <?= $selected_perro?>          >Perro</option>
+                        <option value="Hamster"    <?= $selected_hamster?>        >Hamster</option>
                     </select>
             </fieldset>  
             <fieldset>
