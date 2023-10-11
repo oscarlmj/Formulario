@@ -1,4 +1,6 @@
 <?php
+
+    $valoresPorDefecto = array();
 ?>
 
 <!DOCTYPE html>
