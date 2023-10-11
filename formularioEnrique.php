@@ -45,14 +45,15 @@
     <body>
         <h3> Datos Mascota </h3>
         <form action="recibe_datos.php" method="post">
+            <input type="hidden" name="nombre_formulario" value="Enrique">
             <fieldset>
                 <legend> <strong>Nombre</strong> </legend>
-                <label> Introduzca el nombre de su mascota: </label> <input value="<?php echo $array_valores_defecto["nombre_text"] ?>" type="text" id="nombre">
+                <label> Introduzca el nombre de su mascota: </label> <input name="nombre" value="<?php echo $array_valores_defecto["nombre_text"] ?>" type="text" id="nombre">
             </fieldset>
             <fieldset>
                 <legend> <strong>Especie</strong> </legend>
                     <label>Introduce la especie de tu mascota: </label>     
-                    <select name="tipo">
+                    <select name="Especie">
                         <option value="Gato"      <?= $selected_gato?>            >Gato</option> 
                         <option value="Perro"      <?= $selected_perro?>          >Perro</option>
                         <option value="Hamster"    <?= $selected_hamster?>        >Hamster</option>
@@ -62,10 +63,11 @@
                 <legend> <strong>Caracteristicas</strong> </legend>
                 <label >Destaca las caracteristicas de tu mascota: </label> 
                 <br>
-                <label for="Amable"> <em> Amable </em> </label> <input <?= $checked_amable?> id="Amable" type="checkbox" value="Amable" name="caracteristicas">
-                <label for="Perezoso"> <em>Perezoso </em> </label> <input <?= $checked_perezoso?> id="Perezoso" type="checkbox" value="Perezoso" name="caracteristicas">
-                <label for="Energetico"> <em> Energetico </em> </label> <input  <?= $checked_energetico?> id="Energetico" type="checkbox" value="Energetico" name="caracteristicas">
+                <label for="Amable"> <em> Amable </em> </label> <input <?= $checked_amable?> id="Amable" type="checkbox" value="Amable" name="checkbox">
+                <label for="Perezoso"> <em>Perezoso </em> </label> <input <?= $checked_perezoso?> id="Perezoso" type="checkbox" value="Perezoso" name="checkbox">
+                <label for="Energetico"> <em> Energetico </em> </label> <input  <?= $checked_energetico?> id="Energetico" type="checkbox" value="Energetico" name="checkbox">
             </fieldset>
+            <input type="submit" value="Enviar">
         </form>
     </body>
 

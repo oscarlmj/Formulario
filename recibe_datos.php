@@ -9,7 +9,7 @@
             $validacion= valida_nombre($_POST["nombre"]) && valida_tlf($_POST["telefono"])  && valida_direccion($_POST["direccion"]);
             break;
         case "Enrique":
-            $validacion= valida_nombre($_POST["nombre"]);
+            $validacion= valida_nombre($_POST["nombre"]) && valida_checkbox($_POST["checkbox"]);
             break;
         case "Victor":
             $validacion= valida_nombre($_POST["nombre"]) && valida_consentimiento($_POST["consentimiento"]);
@@ -32,6 +32,14 @@
     else
     {
         $mensaje = "<h2>Error al validar los datos</h2>";
+        foreach ($_POST as $clave => $valor)
+        {
+            if ($clave !== "nombre_formulario" && $clave == "nombre"){
+                $mensaje . "- $clave: ". "No se ha introducido correctamente el nombre. Debe tener al menos 3 caracteres y menos de 50 <br>";
+            }else if($clave !== "nombre_formulario" && $clave == "checkbox"){
+                $mensaje . "- $clave: " . "No se ha seleccionado ninguna opcion, debe de seleccionarse al menos una <br>";
+            }
+        }
     }
 
 ?>
