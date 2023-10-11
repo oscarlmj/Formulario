@@ -88,34 +88,39 @@
         </head>
         <body>
                 <div id="containerForm">
-                        <form action="funciones_validacion.php" method="get">
-                                <label class="separacion" for="nombreCompleto"> Nombre del interesado</label>
-                                <input type="text" id="nombre" class="separacion"></input><br>
+                        <form action="funciones_validacion.php" method="post">
+                                <input type="hidden" name="nombre_formulario" value="Victor">
+
+                                <label class="separacion" for="nombre"> Nombre del interesado</label>
+                                <input type="text" id="nombre" name='nombre' class="separacion"></input><br>
                                 
-                                <label class="separacion" for="nombreCompleto"> Modelo</label>
-                                <select name="marca" id="antiguedad">
+                                <label class="separacion" for="marca"> Marca</label>
+                                <select id="marca" name="marca">
+                                        <option>Seleccione una marca</option>
                                         <option value="volvo">Volvo</option>
                                         <option value="kia">KIA</option>
                                         <option value="mercedes">Mercedes</option>
                                         <option value="bmw">BMW</option>
                                 </select><br>
+
                                 <label id="edad" class="separacion" for="antiguedad">Antigüedad del coche</label>
-                                <select name="anios" id="antiguedad" multiple>
+                                <select id="antiguedad" name="antiguedad"  multiple>
                                         <option value="5">5 años</option>
                                         <option value="10">10 años</option>
                                         <option value="15">15 años</option>
                                         <option value="20">20 años</option>
-                                </select>
-                                <br>
+                                </select><br>
+
                                 <div class="slider">
                                         <input type="range" min="0" max="100000" value="1000" step="500" oninput="rangeValue.innerText = this.value">
                                         <p id="rangeValue">100 kilometros</p>
                                 </div><br>
-                                <input type="checkbox" name="rmb" id="rmb" value="recordar">
-                                <label for="rmb">Recordar información para el próximo inicio de sesión</label><br>
-                                
+
+                                <input type="checkbox" id="consentimiento" name="consentimiento" value="recordar">
+                                <label for="consentimiento">Está de acuerdo con las políticas y privacidad de la empresa</label><br>
+
                                 <label for="color">Color del coche</label>
-                                <input type="color" name="color" id="color">
+                                <input type="color" id="color" name="color">
                         </form> 
                 </div>
         </body>
