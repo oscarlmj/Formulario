@@ -5,32 +5,24 @@
  */
 function valida_direccion($direccion)
 {
-    if(!empty($direccion)){
-        if(!preg_match('/[0-9]/',$direccion) && strlen($direccion)>10)
-        {
+    if(!empty($direccion) && !preg_match('/[0-9]/',$direccion) && strlen($direccion)>10){
             return true;
-        }
-        else
-            return false;
     }
+    else
+            return false;
 }
 
 /**
  * Validamos el número de teléfono, se comprueba que no este el campo vacío y que solo contenga números.
  */
 function valida_tlf($telefono){
-    if(!empty($telefono)){
-        if(ctype_digit($telefono) && strlen($telefono)==9)
-        {
+    if(!empty($telefono) && ctype_digit($telefono) && strlen($telefono)==9){
             return true;
         }
         else
             return false;
     }
-    else
-        return "Introduce un numero de telefono";
-}
-
+    
 /**
  * validamos los datos nombre
  */
