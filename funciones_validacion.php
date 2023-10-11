@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Validamos la dirección, se comprueba que el campo no este vacío y que no contenga números.
  */
@@ -18,9 +17,9 @@ function valida_direccion($direccion)
 function valida_tlf($telefono){
     if(!empty($telefono) && ctype_digit($telefono) && strlen($telefono)==9){
             return true;
-        }
-        else
-            return false;
+    }
+    else
+        return false;
     }
     
 /**
@@ -44,17 +43,19 @@ function valida_tlf($telefono){
   function valida_especie(){
     
   }
+/**
+ * Valida la fecha para comprobar que el 
+ * usuario no pueda seleccionar una superior
+ * a la fecha actual
+ */
+  function valida_fecha($fecha){
+   $tiempoActual = time();
+   $tiempoFechaActual = strtotime($fecha);
 
-  function valida_consentimiento($consentimiento){
-    if(isset($consentimiento) && $consentimiento == 1){
-        // El checkbox esta marcado
-        return true;
-    }else{
-        // El checkbox no está marcado, por lo que se muestra un error
-        echo "Debes aceptar la política de privacidad para enviar el formulario.";
-        return false;
-    }
-    }
-
-
+   if($tiempoFechaActual < $tiempoActual){
+    return true;
+   }else{
+    return false;
+   }
+ }
 ?>

@@ -12,7 +12,7 @@
             $validacion= valida_nombre($_POST["nombre"]);
             break;
         case "Victor":
-            $validacion= valida_nombre($_POST["nombre"]) && valida_consentimiento($_POST["consentimiento"]);
+            $validacion= valida_nombre($_POST["nombre"]) && valida_fecha($_POST["fecha"]) ;
             break;
         default:
             $mensaje="<h2>Error al recibir los datos del formulario</h2>";
