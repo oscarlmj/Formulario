@@ -43,11 +43,6 @@ function valida_telefono($telefono){
  }
 
 
- /**
-  * valido las especies del formulario Enrique.
-  */
-
-
 
 /**
  * Valida la fecha para comprobar que el 
