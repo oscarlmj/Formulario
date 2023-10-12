@@ -11,10 +11,10 @@
             $validacion= valida_nombre($_POST["nombre"]) && valida_telefono($_POST["telefono"])  && valida_direccion($_POST["direccion"]);
             break;
         case "Enrique":
-            $validacion= valida_nombre($_POST["nombre"]) && valida_checkbox($_POST["checkbox"]);
+            $validacion= valida_nombre($_POST["nombre"]);
             break;
         case "Victor":
-            $validacion= valida_nombre($_POST["nombre"]);
+            $validacion= valida_nombre($_POST["nombre"]) && valida_fecha($_POST["fecha"]) ;
             break;
         default:
             $mensaje="<h2>Error al recibir los datos del formulario</h2>";
@@ -54,10 +54,10 @@
         $mensaje="<h1>Error al validar los datos</h1></br>";
         $mensaje.="<br><h3>Debes corregir los siguientes campos:</h3>";
         
+
         foreach ($_POST as $clave => $valor)
-        {
-            
-            if($clave !== "nombre_formulario" && $clave !== "hora_de_entrega" && $clave !== "tipo_via")
+        {  
+            if($clave !== "nombre_formulario" && $clave !== "hora_de_entrega" && $clave !== "tipo_via" && $clave !== "marca" && $clave !== "antiguedad" && $clave !== "consentimiento" && $clave !== "color")
             {
                 $funcion = "valida_".$clave;
                 if($funcion($valor)==false)
