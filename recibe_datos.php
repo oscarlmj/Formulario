@@ -6,13 +6,13 @@
 
     switch($nombre_formulario){
         case "Oscar":
-            $validacion= valida_nombre($_POST["nombre"]) && valida_tlf($_POST["telefono"])  && valida_direccion($_POST["direccion"]);
+            $validacion= valida_nombre($_POST["nombre"]) && valida_telefono($_POST["telefono"])  && valida_direccion($_POST["direccion"]);
             break;
         case "Enrique":
             $validacion= valida_nombre($_POST["nombre"]);
             break;
         case "Victor":
-            $validacion= valida_nombre($_POST["nombre"]) && valida_consentimiento($_POST["consentimiento"]);
+            $validacion= valida_nombre($_POST["nombre"]);
             break;
         default:
             $mensaje="<h2>Error al recibir los datos del formulario</h2>";
@@ -31,9 +31,16 @@
     }
     else
     {
-        $mensaje = "<h2>Error al validar los datos</h2>";
+        $mensaje="<h2>Error al validar los datos</h2></br>";
+        echo "<br> - Debes corregir los siguientes campos:";
+        foreach ($_POST as $clave => $valor)
+        {
+            $funcion = "valida_".$clave;
+            if($clave !== "nombre_formulario" && $clave !== "hora_de_entrega")
+                if($funcion($clave))
+                    echo "<br>- $clave";
+        }
     }
-
 ?>
 
 <html>
