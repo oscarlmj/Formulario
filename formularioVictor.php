@@ -57,8 +57,8 @@
         </head>
         <body>
         <div id="containerForm">
-                <form action="recibe_datos.php" method="POST">
-                        <input type="hidden" name="nombre_formulario" value="Victor"> <!--ESTO-->
+                <form action="recibe_datos.php" method="post">
+                        <input type="hidden" name="nombre_formulario" value="Victor"> 
 
                         <label class="separacion" for="nombre"> Nombre del interesado</label>
                         <input type="text" id="nombre" name='nombre' class="separacion"></input><br>
@@ -81,11 +81,10 @@
                         </select><br><br>
 
                         <label for="fecha">Fecha de adquisición: </label>
-                        <input type="date" name="fecha" id="fecha">
-
+                        <input type="date" name="fecha" id="fecha" required>
 
                         <div class="slider">
-                                <input type="range" min="0" max="100000" value="1000" step="500" oninput="rangeValue.innerText = this.value">
+                                <input type="range" min="0" max="100000" value="1000" step="500" oninput="rangeValue.innerText = this.value" required>
                                 <p id="rangeValue">kilometros</p>
                         </div><br>
 

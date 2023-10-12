@@ -36,7 +36,7 @@
 
         foreach ($_POST as $clave => $valor)
         {  
-            if($clave !== "nombre_formulario" && $clave !== "hora_de_entrega" && $clave !== "tipo_via" && "marca" && "antiguedad")
+            if($clave !== "nombre_formulario" && $clave !== "hora_de_entrega" && $clave !== "tipo_via" && $clave !== "marca" && $clave !== "antiguedad" && $clave !== "consentimiento" && $clave !== "color")
             {
                 $funcion = "valida_".$clave;
                 if($funcion($valor)==false)

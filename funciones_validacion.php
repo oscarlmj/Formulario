@@ -20,15 +20,6 @@ function valida_direccion($direccion)
 /**
  * Validamos el número de teléfono, se comprueba que no este el campo vacío y que solo contenga números.
  */
-
-function valida_tlf($telefono){
-    if(!empty($telefono) && ctype_digit($telefono) && strlen($telefono)==9){
-        return true;
-    }
-    else
-
-        return false;
-
 function valida_telefono($telefono){
     if(empty($telefono) || !ctype_digit($telefono) || strlen($telefono)!=9){
             return false;
@@ -79,5 +70,4 @@ function valida_telefono($telefono){
     return false;
    }
  }
-}
 ?>
