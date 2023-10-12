@@ -33,15 +33,21 @@
     {
         $mensaje="<h2>Error al validar los datos</h2></br>";
         echo "<br> - Debes corregir los siguientes campos:";
+        
         foreach ($_POST as $clave => $valor)
         {
-            $funcion = "valida_".$clave;
-            if($clave !== "nombre_formulario" && $clave !== "hora_de_entrega")
-                if($funcion($clave))
-                    echo "<br>- $clave";
-        $mensaje = "<h2>Error al validar los datos</h2>";
+            
+            if($clave !== "nombre_formulario" && $clave !== "hora_de_entrega" && $clave !== "tipo_via")
+            {
+                $funcion = "valida_".$clave;
+                if($funcion($valor)==false)
+                {
+                    echo "$clave";
+                }
+            }        
+            $mensaje = "<h2>Error al validar los datos</h2>";
+        }
     }
-}
 ?>
 
 <html>
