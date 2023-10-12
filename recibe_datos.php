@@ -9,7 +9,7 @@
             $validacion= valida_nombre($_POST["nombre"]) && valida_telefono($_POST["telefono"])  && valida_direccion($_POST["direccion"]);
             break;
         case "Enrique":
-            $validacion= valida_nombre($_POST["nombre"]);
+            $validacion= valida_nombre($_POST["nombre"]) && valida_checkbox($_POST["checkbox"]);
             break;
         case "Victor":
             $validacion= valida_nombre($_POST["nombre"]);
@@ -39,8 +39,9 @@
             if($clave !== "nombre_formulario" && $clave !== "hora_de_entrega")
                 if($funcion($clave))
                     echo "<br>- $clave";
-        }
+        $mensaje = "<h2>Error al validar los datos</h2>";
     }
+}
 ?>
 
 <html>

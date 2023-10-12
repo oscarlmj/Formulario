@@ -57,3 +57,18 @@ input[type="checkbox"] {
 em {
     font-style: italic;
 }
+
+input[type="submit"] {
+    background-color: #0074e4; 
+    color: #ffffff; 
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 5px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+input[type="submit"]:hover {
+    background-color: #005bc3; 
+}
