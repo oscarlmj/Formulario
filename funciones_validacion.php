@@ -15,7 +15,7 @@ function valida_direccion($direccion)
 /**
  * Validamos el número de teléfono, se comprueba que no este el campo vacío y que solo contenga números.
  */
-function valida_tlf($telefono){
+function valida_telefono($telefono){
     if(!empty($telefono) && ctype_digit($telefono) && strlen($telefono)==9){
             return true;
         }
@@ -45,16 +45,10 @@ function valida_tlf($telefono){
     
   }
 
-  function valida_consentimiento($consentimiento){
-    if(isset($consentimiento) && $consentimiento == 1){
-        // El checkbox esta marcado
-        return true;
-    }else{
-        // El checkbox no está marcado, por lo que se muestra un error
-        echo "Debes aceptar la política de privacidad para enviar el formulario.";
-        return false;
-    }
-    }
+
+
+
+
 
 
 ?>
