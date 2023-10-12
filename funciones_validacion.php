@@ -5,10 +5,10 @@
 function valida_direccion($direccion)
 {
     if(!empty($direccion) && !preg_match('/[0-9]/',$direccion) && strlen($direccion)>10){
-            return true;
+        return true;
     }
     else
-            return false;
+        return false;
 }
 
 /**
@@ -16,9 +16,10 @@ function valida_direccion($direccion)
  */
 function valida_tlf($telefono){
     if(!empty($telefono) && ctype_digit($telefono) && strlen($telefono)==9){
-            return true;
+        return true;
     }
     else
+
         return false;
     }
     
@@ -31,7 +32,11 @@ function valida_tlf($telefono){
     if(preg_match($expresionValoresValidos, $nombre) && ((strlen($nombre) > 1) && (strlen($nombre)<50))){
         return true;
     }else{
-        return false;
+        $errores[] = [
+            'clave' => 'nombre',
+            'tipo' => 'error',
+            'mensaje' => 'No se ha introducido correctamente el nombre. Debe tener al menos 3 caracteres y menos de 50',
+        ];
     }
  }
 
