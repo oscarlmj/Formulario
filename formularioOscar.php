@@ -1,7 +1,11 @@
 <?php
 
 //Se establecen los valores por defecto de los input select dentro de un mismo array
-$array_defecto= array("hora_entrega"=> "19:00", "tipo_via"=> "avenida");
+$array_defecto= array("hora_entrega" => "19:00", 
+                      "tipo_via" => "avenida",
+                      "nombre" => "Oscar Moreno Jorge",
+                      "direccion" => "Industrial José Sánchez Peñate",
+                      "telefono" => "000000000");
 
 //Se inician las variables de las diferentes opciones en ""
 $selected_9 = $selected_12 = $selected_16 = $selected_19 ="";
@@ -51,7 +55,7 @@ switch($array_defecto["tipo_via"]){
         <input type="hidden" name="nombre_formulario" value="Oscar">
 
         <label for="nombre" id="center"><strong>Nombre Completo</strong></label>
-        <input type="text" name="nombre" id="nombre"  placeholder="Introduce tu nombre">
+        <input type="text" name="nombre" id="nombre"  placeholder="Introduce tu nombre" value="<?php echo $array_defecto["nombre"] ?>">
 
         <label for="via"><strong>Tipo de via</strong></label>
         <select name="tipo_via" id="tipo">
@@ -62,10 +66,10 @@ switch($array_defecto["tipo_via"]){
         <br><br>
         
         <label for="direccion"><strong>Direccion</strong></label>
-        <input type="text" name="direccion" placeholder="Introduce la direccion">
+        <input type="text" name="direccion" placeholder="Introduce la direccion" value="<?php echo $array_defecto["direccion"] ?>">
 
         <label for="telefono" id="center"><strong>Numero de telefono</strong></label>
-        <input type="text" id="telefono" name="telefono" placeholder="Introduce un teléfono">
+        <input type="text" id="telefono" name="telefono" placeholder="Introduce un teléfono" value="<?php echo $array_defecto["telefono"]?>">
 
 
         <label for="hora"><strong>Hora de entrega</strong></label>
