@@ -52,9 +52,10 @@ switch($array_defecto["tipo_via"]){
 
         <label for="nombre" id="center"><strong>Nombre Completo</strong></label>
         <input type="text" name="nombre" id="nombre"  placeholder="Introduce tu nombre">
+        <label id="error"></label>
 
         <label for="via"><strong>Tipo de via</strong></label>
-        <select name="tipo de via" id="tipo">
+        <select name="direccion" id="tipo">
             <option value="calle" <?=$selected_calle?>>Calle</option>
             <option value="urbanizacion" <?=$selected_urbanizacion?>>Urbanizacion</option>
             <option value="avenida" <?=$selected_avenida?>>Avenida</option>
@@ -77,8 +78,8 @@ switch($array_defecto["tipo_via"]){
         </select>
         <br><br>
         <label for="rmb"><strong>Recordar informacion de envio</strong></label>
-        <input type="checkbox" id="rmb" name="remember" value="recordar">
-        <input type="submit" value="Confirmar">
+        <input type="checkbox" id="rmb" name="checkbox" value="recordar">
+        <input type="submit" value="Confirmar" >
     </form>
 </div>
 </body>
