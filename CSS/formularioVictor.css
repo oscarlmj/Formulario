@@ -84,4 +84,5 @@ input[type="submit"]{
     justify-content: center;
     align-items: center;
     padding: 5px 20px;
+    cursor: pointer;
 }
