@@ -6,13 +6,13 @@
 
     switch($nombre_formulario){
         case "Oscar":
-            $validacion= valida_nombre($_POST["nombre"]) && valida_tlf($_POST["telefono"])  && valida_direccion($_POST["direccion"]);
+            $validacion= valida_nombre($_POST["nombre"]) && valida_telefono($_POST["telefono"])  && valida_direccion($_POST["direccion"]);
             break;
         case "Enrique":
             $validacion= valida_nombre($_POST["nombre"]) && valida_checkbox($_POST["checkbox"]);
             break;
         case "Victor":
-            $validacion= valida_nombre($_POST["nombre"]) && valida_consentimiento($_POST["consentimiento"]);
+            $validacion= valida_nombre($_POST["nombre"]);
             break;
         default:
             $mensaje="<h2>Error al recibir los datos del formulario</h2>";
@@ -31,15 +31,16 @@
     }
     else
     {
-        $mensaje = "<h2>Error al validar los datos</h2>";
-        foreach ($_POST as $clave => $valor)
-        {
-            if (){
-                echo "- $clave: ". "No se ha introducido correctamente el nombre. Debe tener al menos 3 caracteres y menos de 50 <br>";
-            }else if(){
-                echo "- $clave: " . "No se ha seleccionado ninguna opcion, debe de seleccionarse al menos una <br>";
-            }
+        $mensaje="<h2>Error al validar los datos</h2></br>";
+        echo "<br> - Debes corregir los siguientes campos:";
+        foreach ($_POST as $clave => $valor){
+            $funcion = "valida_".$clave;
+            if($clave !== "nombre_formulario" && $clave !== "hora_de_entrega")
+                if($funcion($clave))
+                    echo "<br>- $clave";
         }
+        $mensaje = "<h2>Error al validar los datos</h2>";
+
     }
 
 ?>
