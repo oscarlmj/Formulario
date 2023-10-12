@@ -1,20 +1,15 @@
 <?php
 /**
- * Validamos la dirección, se comprueba que el campo no este vacío y que no contenga números.
+ * Validamos la dirección, se comprueba que el campo no este vacío, que no contenga numero, que la longitud se mayor que 10,
+ * y que la primera letra sea mayuscula
  */
 function valida_direccion($direccion)
 {
-    if(!empty($direccion) && !preg_match('/[0-9]/',$direccion) && strlen($direccion)>10){
+    if(!empty($direccion) && !preg_match('/[0-9]/',$direccion) && strlen($direccion)>10 && ctype_upper($direccion[0])){
         return true;
     }
     else
         return false;
-
-    if(empty($direccion) || preg_match('/[0-9]/',$direccion) || strlen($direccion)<10){
-            return false;
-    }
-    else
-            return true;
 }
 
 /**
@@ -26,7 +21,6 @@ function valida_telefono($telefono){
         }
         else
             return true;
-
     }
     
 /**
@@ -35,19 +29,12 @@ function valida_telefono($telefono){
 
  function valida_nombre($nombre){
     $expresionValoresValidos = '/^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$/u';
-    if(preg_match($expresionValoresValidos, $nombre) && !empty($nombre) && ((strlen($nombre) > 1) && (strlen($nombre)<50))){
+    if(preg_match($expresionValoresValidos, $nombre) && !empty($nombre) && ((strlen($nombre) > 1) && (strlen($nombre) < 50)) && ctype_upper($nombre[0])){
         return true;
     }else{
         return false;
     }
  }
-
-
- /**
-  * valido las especies del formulario Enrique.
-  */
-
-
 
 /**
  * Valida la fecha para comprobar que el 
