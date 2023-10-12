@@ -41,13 +41,7 @@ function valida_telefono($telefono){
   * valido las especies del formulario Enrique.
   */
 
-    function valida_checkbox($array){
-    if (isset($array)) {
-        return true;
-    } else {
-        return false;
-    }
-  }
+
 
 
 
