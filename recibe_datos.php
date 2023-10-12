@@ -3,6 +3,8 @@
 
     $nombre_formulario=$_POST["nombre_formulario"];
     $mensaje = "";
+    $imagen = " ";
+    
 
     switch($nombre_formulario){
         case "Oscar":
@@ -18,21 +20,39 @@
             $mensaje="<h2>Error al recibir los datos del formulario</h2>";
     }
 
+
     if($validacion)
     {
-        $mensaje ="<h2>Datos recibidos y validados correctamente</h2>";
+        //Imagen de tick verde.
+        $imagen = "<img src='tick.png'>";
+        $mensaje ="<h1>Datos recibidos y validados correctamente</h1><br>";
+        
         foreach ($_POST as $clave => $valor)
         {
             if ($clave !== "nombre_formulario")
-
-                // Invocamos a htmlspecialchars para evitar incluir código HTML o Javascript en la página de respuesta
-                echo "<br> - $clave: ". htmlspecialchars($valor);
+            {
+                //Se convierte la clave a una String en Mayus.
+                $clave = strtoupper($clave); 
+                //Se elimina el caracter especial _.
+                $clave = str_replace('_', ' ', $clave);
+                //Se concatena cada clave y su valor en una variable para luego mostrarla por pantalla.
+                $mensaje.="<br><strong>$clave: </strong>". htmlspecialchars($valor)."<br>";
+    
+            }
         }
     }
     else
     {
-        $mensaje="<h2>Error al validar los datos</h2></br>";
-        echo "<br> - Debes corregir los siguientes campos:";
+        //Imagen de error.
+        $imagen = "<img src='wrong.png'>";
+
+        //Inicializa la variable form con la String "formulario" para poder hacer uso de ella a la hora de establecer la ruta del formulario correspondiente en el enlace.
+        $form = "formulario";
+        //Crea el enlace del formulario.
+        $formulario = "<a href='" . $form . $nombre_formulario . ".php'>Ir al formulario de " . $nombre_formulario . "</a>";
+
+        $mensaje="<h1>Error al validar los datos</h1></br>";
+        $mensaje.="<br><h3>Debes corregir los siguientes campos:</h3>";
         
         foreach ($_POST as $clave => $valor)
         {
@@ -42,16 +62,36 @@
                 $funcion = "valida_".$clave;
                 if($funcion($valor)==false)
                 {
-                    echo "$clave";
+                    //Se convierte la clave a una String en Mayus.
+                    $clave = strtoupper($clave);
+                    //Se añaden las claves que necesitan ser corregidas para mostrarlas en la pantalla de error.
+                    $mensaje.="<br><strong>$clave</strong>";
                 }
             }        
-            $mensaje = "<h2>Error al validar los datos</h2>";
         }
     }
 ?>
 
 <html>
+<head>
+    <title>Resultado de validación</title>
+    <link rel="stylesheet" href="./CSS/recibedatos.css">
+</head>
     <body>
-        <?php echo $mensaje; ?>
+    <div class="center-div">  
+        <div class="resultado">
+        <?php
+                //Muestra en pantalla la imagen correspondiente al resultado de la comprobación.
+                echo $imagen;
+                //Muestra por pantalla el mensaje correspondiente, los datos erroneos que debemos corregir, o cada dato con su contenido.
+                echo $mensaje."<br>";
+
+                //En caso de validacion negativa añade el enlace al html.
+                if(!$validacion)
+                echo $formulario;
+                ?>
+        </div>
+        <br>
+        </div>
     </body>
 </html>
