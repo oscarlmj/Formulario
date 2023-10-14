@@ -2,10 +2,8 @@
 
 //Se establecen los valores por defecto de los input select dentro de un mismo array
 $array_defecto= array("hora_entrega" => "19:00", 
-                      "tipo_via" => "avenida",
-                      "nombre" => "Oscar Moreno Jorge",
-                      "direccion" => "Industrial José Sánchez Peñate",
-                      "telefono" => "000000000");
+                      "tipo_via" => "avenida"
+                     );
 
 //Se inician las variables de las diferentes opciones en ""
 $selected_9 = $selected_12 = $selected_16 = $selected_19 ="";
@@ -47,7 +45,7 @@ switch($array_defecto["tipo_via"]){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Oscar</title>
-    <link rel="stylesheet" href="./CSS/formularioOscar.css">
+    <link rel="stylesheet" href="./CSS/formulariooscar.css">
 </head>
 <body>
 <div>
@@ -55,7 +53,7 @@ switch($array_defecto["tipo_via"]){
         <input type="hidden" name="nombre_formulario" value="Oscar">
 
         <label for="nombre" id="center"><strong>Nombre Completo</strong></label>
-        <input type="text" name="nombre" id="nombre"  placeholder="Introduce tu nombre" value="<?php echo $array_defecto["nombre"] ?>">
+        <input type="text" name="nombre" id="nombre"  placeholder="Introduce tu nombre">
 
         <label for="via"><strong>Tipo de via</strong></label>
         <select name="tipo_via" id="tipo">
@@ -66,10 +64,10 @@ switch($array_defecto["tipo_via"]){
         <br><br>
         
         <label for="direccion"><strong>Direccion</strong></label>
-        <input type="text" name="direccion" placeholder="Introduce la direccion" value="<?php echo $array_defecto["direccion"] ?>">
+        <input type="text" name="direccion" placeholder="Introduce la direccion">
 
         <label for="telefono" id="center"><strong>Numero de telefono</strong></label>
-        <input type="text" id="telefono" name="telefono" placeholder="Introduce un teléfono" value="<?php echo $array_defecto["telefono"]?>">
+        <input type="text" id="telefono" name="telefono" placeholder="Introduce un teléfono">
 
 
         <label for="hora"><strong>Hora de entrega</strong></label>
