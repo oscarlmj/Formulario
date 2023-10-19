@@ -1,0 +1,1 @@
+"especie_seleccionada;Perro/nombre_text;Kira/caracteristica_seleccionada;Peresozo" 
