@@ -1,6 +1,10 @@
 <?php
+        //Flujo de lectura para cargar los archivos
+        $miFichero = fopen("./ficheroVictor.txt", "r") or die("Archivo no encontrado");
+        echo fread($miFichero);
+        fclose($miFichero);
+
         //Poner valores por defecto a los select
-        $array_defecto = array("marca" => "volvo", "anios" => "5 anios");
         $selected_volvo = $selected_kia = $selected_mercedes = $selected_bmw = "";
         $selected_5 = $selected_10 = $selected_15 = $selected_20 = "";
 
