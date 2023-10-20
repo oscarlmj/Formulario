@@ -4,6 +4,8 @@
 $array_defecto= array("hora_entrega" => "19:00", 
                       "tipo_via" => "avenida"
                      );
+$fichero="/datosformulariooscar.txt";
+
 
 //Se inician las variables de las diferentes opciones en ""
 $selected_9 = $selected_12 = $selected_16 = $selected_19 ="";
