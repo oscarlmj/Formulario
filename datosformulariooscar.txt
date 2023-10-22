@@ -1,1 +1,1 @@
-hora_entrega="19:00",tipo_via="avenida"
+hora_entrega=12:00,tipo_via=calle
