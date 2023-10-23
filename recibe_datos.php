@@ -1,5 +1,23 @@
 <?php
     include "funciones_validacion.php";
+    $destino="./Documentos/";
+    opendir($destino);
+    $archivos;
+
+    $archivos=scandir($destino);
+    foreach($_FILES as $fichero)
+    {
+        if (file_exists($destino . $fichero['name'])) {
+            $split = explode(".", $fichero['name']);
+            if (count($split) == 2) {
+                $fichero['name'] = $split[0] . "_N." . $split[1];
+                move_uploaded_file($fichero['tmp_name'], $destino . $fichero['name']);
+            } else {
+            }
+        } else {
+            move_uploaded_file($fichero['tmp_name'], $destino . $fichero['name']);
+        }
+    }
 
     $nombre_formulario=$_POST["nombre_formulario"];
     $mensaje = "";
@@ -38,23 +56,6 @@
         default:
             $mensaje="<h2>Error al recibir los datos del formulario</h2>";
     }
-
-    $archivos=scandir($destino);
-    foreach($_FILES as $fichero)
-    {
-        if (file_exists($destino . $fichero['name'])) {
-            $split = explode(".", $fichero['name']);
-            if (count($split) == 2) {
-                $fichero['name'] = $split[0] . "_N." . $split[1];
-                move_uploaded_file($fichero['tmp_name'], $destino . $fichero['name']);
-            } else {
-                // Manejo de error: El nombre de archivo no tiene una extensión válida.
-            }
-        } else {
-            move_uploaded_file($fichero['tmp_name'], $destino . $fichero['name']);
-        }
-    }
-
 
     if($validacion)
     {
