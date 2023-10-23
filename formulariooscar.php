@@ -1,9 +1,25 @@
 <?php
 
-//Se establecen los valores por defecto de los input select dentro de un mismo array
-$array_defecto= array("hora_entrega" => "19:00", 
-                      "tipo_via" => "avenida"
-                     );
+//Se lee el fichero y se recoge su contenido en la variable $cont.
+$fichero="./datosformulariooscar.txt";
+$gestor=fopen($fichero,"r");
+$cont=fread($gestor,filesize($fichero));
+fclose($gestor);
+
+//Se crea el array para los valores por defecto vacio.
+$array_defecto= array();
+
+//Se separa los elementos del archivo que están divididos por una ",", y se almacenan en un array.
+$splitcont=explode(",",$cont);
+
+//Recorre cada posicion del array, las separa por el signo "=", y almacena en el array por defecto los valores en la posicion correspondiente.
+foreach($splitcont as $valor)
+{
+    if(explode("=",$valor)[0]==="hora_entrega")
+        $array_defecto["hora_entrega"]=explode("=",$valor)[1];
+    else if(explode("=",$valor)[0]==="tipo_via")
+        $array_defecto["tipo_via"]=explode("=",$valor)[1];
+}
 
 //Se inician las variables de las diferentes opciones en ""
 $selected_9 = $selected_12 = $selected_16 = $selected_19 ="";
@@ -49,7 +65,7 @@ switch($array_defecto["tipo_via"]){
 </head>
 <body>
 <div>
-    <form action="recibe_datos.php" method="post">
+    <form action="recibe_datos.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="nombre_formulario" value="Oscar">
 
         <label for="nombre" id="center"><strong>Nombre Completo</strong></label>
@@ -78,6 +94,10 @@ switch($array_defecto["tipo_via"]){
             <option value="19:00" <?=$selected_19?>>19:00</option>
         </select>
         <br><br>
+        <label for="DNI"><strong>DNI</strong></label>
+        <input type="file" name="file1">
+        <label for="Firma"><strong>Firma</strong></label>
+        <input type="file" name="file2">
         <label for="rmb"><strong>Recordar informacion de envio</strong></label>
         <input type="checkbox" id="rmb" name="checkbox" value="recordar">
         <input type="submit" value="Confirmar" >

@@ -6,6 +6,7 @@ body {
     margin: 0;
     background-image: linear-gradient(to right, #0eac3e, #00c6ae, #4cd7f1, #c3e3ff, #f9f9f9);
 }
+
 form {
     width: 100%;
     max-width: 400px; /* Ancho máximo del formulario */
@@ -47,8 +48,6 @@ select {
     width: 100%;
 }
 
-
-
 #rmb {
     margin-top: 10px;
     width: fit-content;
@@ -70,7 +69,6 @@ input[type="submit"] {
     cursor: pointer;
     font-weight: bold;
 }
-
 
 @media (max-width: 768px) {
     form {
