@@ -24,7 +24,6 @@
                 $caracteristica = $arrayClaveValor[1];
             }
         }
-
     }
     
     fclose($mifichero); //Cerramos la conexión con el fichero
@@ -73,7 +72,7 @@
 
     <body>
         <h3> Datos Mascota </h3>
-        <form action="recibe_datos.php" method="post">
+        <form action="recibe_datos.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="nombre_formulario" value="Enrique">
             <fieldset>
                 <legend> <strong>Nombre</strong> </legend>
@@ -98,7 +97,7 @@
             </fieldset>
             <fieldset >
                 <legend> <strong> Sube fichero con datos</strong> </legend>
-                <input type="file" id="file">
+                <input type="file" id="file" name="file1">
             </fieldset>
             <input type="submit" value="Enviar">
         </form>
