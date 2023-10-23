@@ -1,11 +1,40 @@
 
 <?php
+
+    //Utilizando fichero para valores por defecto
+
+    //inicializamos las variables que almacenaran los valores del fichero
+    $especie="";
+    $nombre="";
+    $caracteristica="";
+
+    $mifichero = fopen("ficheroEnrique.txt", "r");  //Abrimos el fichero para leer.
+
+    //Leemos linea por linea con un bucle comprobando en cada itetación que no se ha llegado al final del fichero.
+    while(!feof($mifichero)){   
+        $lineaFichero = fgets($mifichero);
+        $arrayParejas = explode("/", $lineaFichero);
+        for($pareja = 0; $pareja < count($arrayParejas); $pareja++){
+            $arrayClaveValor = explode(";",$arrayParejas[$pareja]);
+            if($arrayClaveValor[0] == "especie_seleccionada"){
+                $especie = $arrayClaveValor[1];
+            }else if($arrayClaveValor[0] == "nombre_text"){
+                $nombre = $arrayClaveValor[1];
+            }else if($arrayClaveValor[0] == "caracteristica_seleccionada"){
+                $caracteristica = $arrayClaveValor[1];
+            }
+        }
+
+    }
+    
+    fclose($mifichero); //Cerramos la conexión con el fichero
+
     // Valor que deberá estar seleccionado
-    $array_valores_defecto = array ("especie_seleccionada" => "Perro", "nombre_text" => "Kira", "caracteristica_seleccionada"=> "Perezoso",);
+    $array_valores_defecto = array ("especie_seleccionada" => $especie, "nombre_text" => $nombre, "caracteristica_seleccionada" => $caracteristica, );
 
     // Inicializamos las variables a ""
     $selected_gato = $selected_perro = $selected_hamster = "";
-    $checked_amable = $checked_perezoso = $checked_energetico ="";
+    $checked_amable = $checked_perezoso = $checked_energetico = "";
 
     // En función del valor por defecto, seleccionamos una u otra opción
     switch ($array_valores_defecto["especie_seleccionada"]) {
