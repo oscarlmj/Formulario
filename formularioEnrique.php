@@ -96,6 +96,10 @@
                 <label for="Perezoso"> <em>Perezoso </em> </label> <input <?= $checked_perezoso?> id="Perezoso" type="checkbox" value="Perezoso" name="caracteristica2">
                 <label for="Energetico"> <em> Energetico </em> </label> <input  <?= $checked_energetico?> id="Energetico" type="checkbox" value="Energetico" name="caracteristica3">
             </fieldset>
+            <fieldset >
+                <legend> <strong> Sube fichero con datos</strong> </legend>
+                <input type="file" id="file">
+            </fieldset>
             <input type="submit" value="Enviar">
         </form>
     </body>
