@@ -95,9 +95,9 @@ switch($array_defecto["tipo_via"]){
         </select>
         <br><br>
         <label for="DNI"><strong>DNI</strong></label>
-        <input type="file" name="DNI">
+        <input type="file" name="file1">
         <label for="Firma"><strong>Firma</strong></label>
-        <input type="file" name="Firma">
+        <input type="file" name="file2">
         <label for="rmb"><strong>Recordar informacion de envio</strong></label>
         <input type="checkbox" id="rmb" name="checkbox" value="recordar">
         <input type="submit" value="Confirmar" >
