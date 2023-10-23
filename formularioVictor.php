@@ -1,8 +1,23 @@
 <?php
-        //Flujo de lectura para cargar los archivos
-        $miFichero = fopen("./ficheroVictor.txt", "r") or die("Archivo no encontrado");
-        echo fread($miFichero);
-        fclose($miFichero);
+        $fichero="./ficheroVictor.txt";
+        $gestor=fopen($fichero,"r");
+        $cont=fread($gestor,filesize($fichero));
+        fclose($gestor);
+
+        //Se crea el array para los valores por defecto vacio.
+        $array_defecto= array();
+
+        //Se separa los elementos del archivo que están divididos por una ",", y se almacenan en un array.
+        $splitcont=explode(",",$cont);
+
+        //Recorre cada posicion del array, las separa por el signo "=", y almacena en el array por defecto los valores en la posicion correspondiente.
+        foreach($splitcont as $valor)
+        {
+        if(explode("=",$valor)[0]==="marca")
+                $array_defecto["marca"]=explode("=",$valor)[1];
+        else if(explode("=",$valor)[0]==="anios")
+                $array_defecto["anios"]=explode("=",$valor)[1];
+        }
 
         //Poner valores por defecto a los select
         $selected_volvo = $selected_kia = $selected_mercedes = $selected_bmw = "";
@@ -97,6 +112,7 @@
 
                         <label for="color">Color del coche</label>
                         <input type="color" id="color" name="color"><br>
+                        <input type="file" name="file1"><br>
                         <input type="submit" value="Confirmar">
                 </form> 
         </div>
