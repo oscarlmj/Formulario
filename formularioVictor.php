@@ -76,7 +76,7 @@
         </head>
         <body>
         <div id="containerForm">
-                <form action="recibe_datos.php" method="post">
+                <form action="recibe_datos.php" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="nombre_formulario" value="Victor"> 
 
                         <label class="separacion" for="nombre"> Nombre del interesado</label>
