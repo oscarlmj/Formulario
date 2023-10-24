@@ -7,7 +7,22 @@
     $archivos=scandir($destino);
     foreach($_FILES as $fichero)
     {
-        if (file_exists($destino . $fichero['name'])) {
+        if(file_exists($destino . $fichero['name']) && (strpos($fichero['name'], '_N') ==! false)){
+            $archivosConN = 0;
+            for ($i=0; $i<count($archivos);$i++) {
+                if(strpos($archivos[$i], '_N') ==!false){
+                    $archivosConN += 1;
+                }
+            }
+            $split = explode(".", $fichero['name']);
+            if (count($split) == 2) {
+                $fichero['name'] = $split[0] . $archivosConN . "." . $split[1];
+                move_uploaded_file($fichero['tmp_name'], $destino . $fichero['name']);
+            } else {
+
+            }
+
+        }else if (file_exists($destino . $fichero['name'])) {
             $split = explode(".", $fichero['name']);
             if (count($split) == 2) {
                 $fichero['name'] = $split[0] . "_N." . $split[1];
