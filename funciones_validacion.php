@@ -35,6 +35,9 @@ function valida_telefono($telefono){
         return false;
     }
  }
+ function juntarNombreApellidos($nombreCompleto){
+       $juntacion = $nombre . $apellido;
+ }
 
 /**
  * Valida la fecha para comprobar que el 

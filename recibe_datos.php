@@ -1,9 +1,9 @@
 <?php
-    include "funciones_validacion.php";
-    $destino="./Documentos/";
-    opendir($destino);
-    $archivos;
-
+    include "funciones_validacion.php"; //para importar las funciones validacion
+    //Establece el directorio de destino.
+    $destino="./Documentos/"; //ruta destino fichero
+    opendir($destino); //abrir la carpeta
+    $archivos; //esto es para recorrer los fichero dentro del directorio 
     $archivos=scandir($destino);
     foreach($_FILES as $fichero)
     {
@@ -18,8 +18,6 @@
             if (count($split) == 2) {
                 $fichero['name'] = $split[0] . $archivosConN . "." . $split[1];
                 move_uploaded_file($fichero['tmp_name'], $destino . $fichero['name']);
-            } else {
-
             }
 
         }else if (file_exists($destino . $fichero['name'])) {
@@ -37,26 +35,6 @@
     $nombre_formulario=$_POST["nombre_formulario"];
     $mensaje = "";
     $imagen = "";
-
-    //Establece el directorio de destino.
-    $destino="./Documentos/";
-    opendir($destino);
-    $archivos;
-
-    $archivos=scandir($destino);
-    foreach($_FILES as $fichero)
-    {
-        if (file_exists($destino . $fichero['name'])) {
-            $split = explode(".", $fichero['name']);
-            if (count($split) == 2) {
-                $fichero['name'] = $split[0] . "_N." . $split[1];
-                move_uploaded_file($fichero['tmp_name'], $destino . $fichero['name']);
-            } else {
-            }
-        } else {
-            move_uploaded_file($fichero['tmp_name'], $destino . $fichero['name']);
-        }
-    }
     
     switch($nombre_formulario){
         case "Oscar":

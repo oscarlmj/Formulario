@@ -1,8 +1,8 @@
 <?php
-        $fichero="./ficheroVictor.txt";
-        $gestor=fopen($fichero,"r");
-        $cont=fread($gestor,filesize($fichero));
-        fclose($gestor);
+        $fichero="./ficheroVictor.txt"; //fichero donde va a coger los valores por defecto
+        $gestor=fopen($fichero,"r"); //abre el flujo del fichero, r de read
+        $cont=fread($gestor,filesize($fichero)); //flujo de lectura
+        fclose($gestor);//cerrar el flujo
 
         //Se crea el array para los valores por defecto vacio.
         $array_defecto= array();
@@ -18,6 +18,13 @@
         else if(explode("=",$valor)[0]==="anios")
                 $array_defecto["anios"]=explode("=",$valor)[1];
         }
+
+        /**
+         * Valores por defecto sin usar archivo
+         * $valoresDefecto = array(marca => "volvo", antiguedad => "10");
+         */
+        
+        
 
         //Poner valores por defecto a los select
         $selected_volvo = $selected_kia = $selected_mercedes = $selected_bmw = "";
